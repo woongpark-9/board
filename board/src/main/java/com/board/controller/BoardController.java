@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.board.domain.BoardVO;
 import com.board.service.BoardService;
 
+//참고자료 : https://kuzuro.blogspot.com/2019/09/12-1.html
+
 @Controller
 @RequestMapping("/board/*")
 public class BoardController {
