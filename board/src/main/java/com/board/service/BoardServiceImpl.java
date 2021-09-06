@@ -14,53 +14,61 @@ public class BoardServiceImpl implements BoardService {
 
 	@Inject
 	private BoardDAO dao;
-	
-	
-	
+
 	@Override
 	public List<BoardVO> list() throws Exception {
 		return dao.list();
 	}
 
-
-
 	@Override
 	public void write(BoardVO vo) throws Exception {
 		// TODO Auto-generated method stub
 		dao.write(vo);
-		
+
 	}
-	
+
 	@Override
 	public BoardVO view(int bno) throws Exception {
 		// TODO Auto-generated method stub
 		return dao.view(bno);
 	}
 
-
-
 	@Override
 	public void modify(BoardVO vo) throws Exception {
 		// TODO Auto-generated method stub
 		dao.modify(vo);
-		
+
 	}
+
 	@Override
 	public void delete(int bno) throws Exception {
 		// TODO Auto-generated method stub
 		dao.delete(bno);
-		
+
 	}
 
 	// 게시물 총 갯수
 	@Override
 	public int count() throws Exception {
-	 return dao.count();
+		return dao.count();
 	}
-	
+
 	// 게시물 목록 + 페이징
 	@Override
 	public List listPage(int displayPost, int postNum) throws Exception {
-	 return dao.listPage(displayPost, postNum);
+		return dao.listPage(displayPost, postNum);
+	}
+
+	// 게시물 목록 + 페이징 + 검색
+	@Override
+	public List<BoardVO> listPageSearch(int displayPost, int postNum, String searchType, String keyword)
+			throws Exception {
+		return dao.listPageSearch(displayPost, postNum, searchType, keyword);
+	}
+
+	// 게시물 총 갯수
+	@Override
+	public int searchCount(String searchType, String keyword) throws Exception {
+		return dao.searchCount(searchType, keyword);
 	}
 }
